@@ -34,6 +34,7 @@ namespace Marwin.Core.Services
 
             //Добавление сотрудника в БД
             Employee employeeToAdd = employeeAddRequest.ToEmployee();
+            employeeToAdd.EmployeeId = Guid.NewGuid();
             await _employeeRepository.AddEmployee(employeeToAdd);
 
             return employeeToAdd.ToEmployeeResponse();
@@ -72,7 +73,7 @@ namespace Marwin.Core.Services
 
             Company company = await _companyRepository.GetCompanyById(companyId);
             if (company == null)
-                throw new ArgumentException($"Company with id: {company.CompanyId} doesn't exist");
+                throw new ArgumentException($"Company with id: {companyId} doesn't exist");
 
             List<Employee> employees = await _employeeRepository.GetEmployeesByCompanyId(companyId);
             return employees.Select(e => e.ToEmployeeResponse()).ToList();

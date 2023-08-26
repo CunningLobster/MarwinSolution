@@ -33,10 +33,6 @@ namespace Marwin.Core.DTO
         /// Идентфикатор компании
         /// </summary>
         public Guid CompanyId { get; set; }
-        /// <summary>
-        /// Компания
-        /// </summary>
-        public string Company { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -72,7 +68,6 @@ namespace Marwin.Core.DTO
                 ThirdName = employee.ThirdName,
                 TIN = employee.TIN,
                 CompanyId = employee.CompanyId,
-                Company = employee.Company.CompanyName
             };
         }
     }
