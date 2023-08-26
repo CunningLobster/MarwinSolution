@@ -13,7 +13,7 @@ namespace Marwin.Core.ServiceContracts.EmployeeServiceContracts
         /// <summary>
         /// Добавить нового сотрудника в компанию с выбранным Идентификатором
         /// </summary>
-        /// <param name="employee">Добавляемый сотрудник</param>
+        /// <param name="employeeAddRequest">Добавляемый сотрудник</param>
         /// <param name="companyId">Идентификатор компании</param>
         /// <returns>Новый сотрудник</returns>
         Task<EmployeeResponse> AddEmployee(EmployeeAddRequest employeeAddRequest, Guid companyId);

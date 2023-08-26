@@ -13,8 +13,8 @@ namespace Marwin.Core.ServiceContracts.EmployeeServiceContracts
         /// <summary>
         /// Обновить данные о сотруднике
         /// </summary>
-        /// <param name="Employee">Сотрудник</param>
+        /// <param name="employeeResponse">Сотрудник</param>
         /// <returns>Обновленный сотрудник</returns>
-        Task<EmployeeResponse> UpdateEmployee(EmployeeResponse employee);
+        Task<EmployeeResponse> UpdateEmployee(EmployeeResponse employeeResponse);
     }
 }

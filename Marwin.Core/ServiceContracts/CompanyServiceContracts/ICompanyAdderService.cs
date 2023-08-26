@@ -13,8 +13,8 @@ namespace Marwin.Core.ServiceContracts.CompanyServiceContracts
         /// <summary>
         /// Добавить новую компанию
         /// </summary>
-        /// <param name="company">Компания</param>
+        /// <param name="companyAddRequest">Компания</param>
         /// <returns>Новая компания</returns>
-        Task<CompanyResponse> AddCompany(CompanyAddRequest company);
+        Task<CompanyResponse> AddCompany(CompanyAddRequest companyAddRequest);
     }
 }

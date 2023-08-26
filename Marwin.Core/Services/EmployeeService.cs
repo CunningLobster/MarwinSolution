@@ -25,7 +25,7 @@ namespace Marwin.Core.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteEmployee(EmployeeUpdateRequest employee)
+        public Task<bool> DeleteEmployee(EmployeeUpdateRequest employeeUpdateRequest)
         {
             throw new NotImplementedException();
         }
@@ -40,7 +40,7 @@ namespace Marwin.Core.Services
             throw new NotImplementedException();
         }
 
-        public Task<EmployeeResponse> UpdateEmployee(EmployeeResponse employee)
+        public Task<EmployeeResponse> UpdateEmployee(EmployeeResponse employeeResponse)
         {
             throw new NotImplementedException();
         }

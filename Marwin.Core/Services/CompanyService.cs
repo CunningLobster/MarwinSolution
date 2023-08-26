@@ -10,12 +10,12 @@ namespace Marwin.Core.Services
 {
     public class CompanyService : ICompanyGetterService, ICompanyAdderService, ICompanyUpdaterService, ICompanyDeleterService
     {
-        public Task<CompanyResponse> AddCompany(CompanyAddRequest company)
+        public Task<CompanyResponse> AddCompany(CompanyAddRequest companyAddRequest)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteCompany(CompanyUpdateRequest company)
+        public Task<bool> DeleteCompany(CompanyUpdateRequest companyUpdateRequest)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,7 @@ namespace Marwin.Core.Services
             throw new NotImplementedException();
         }
 
-        public Task<CompanyResponse> UpdateCompany(CompanyUpdateRequest company)
+        public Task<CompanyResponse> UpdateCompany(CompanyUpdateRequest companyUpdateRequest)
         {
             throw new NotImplementedException();
         }
