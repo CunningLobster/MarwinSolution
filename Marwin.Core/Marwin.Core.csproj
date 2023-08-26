@@ -45,10 +45,15 @@
     <Compile Include="Domain\Entities\Employee.cs" />
     <Compile Include="Domain\RepositoryContracts\ICompanyRepository.cs" />
     <Compile Include="Domain\RepositoryContracts\IEmployeeRepository.cs" />
+    <Compile Include="DTO\CompanyAddRequest.cs" />
+    <Compile Include="DTO\CompanyResponse.cs" />
+    <Compile Include="DTO\CompanyUpdateRequest.cs" />
+    <Compile Include="DTO\EmployeeAddRequest.cs" />
+    <Compile Include="DTO\EmployeeResponse.cs" />
+    <Compile Include="DTO\EmployeeUpdateRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
     <Folder Include="ServiceContracts\" />
     <Folder Include="Services\" />
   </ItemGroup>
