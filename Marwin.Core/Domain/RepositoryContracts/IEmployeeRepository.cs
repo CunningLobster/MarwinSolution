@@ -37,9 +37,9 @@ namespace Marwin.Core.Domain.RepositoryContracts
         /// <summary>
         /// Удалить сотрудника с выбранным Идентификатором
         /// </summary>
-        /// <param name="employeeId">Идентификатор сотрудника</param>
+        /// <param name="employee">Удаляемый сотрудник</param>
         /// <returns>true, если удаление прошло успешно</returns>
-        Task<bool> DeleteEmployee(Guid employeeId);
+        Task<bool> DeleteEmployee(Employee employee);
 
     }
 }
