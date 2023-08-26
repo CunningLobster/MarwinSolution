@@ -61,6 +61,7 @@
     <Compile Include="DTO\EmployeeAddRequest.cs" />
     <Compile Include="DTO\EmployeeResponse.cs" />
     <Compile Include="DTO\EmployeeUpdateRequest.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceContracts\CompanyServiceContracts\ICompanyAdderService.cs" />
     <Compile Include="ServiceContracts\CompanyServiceContracts\ICompanyDeleterService.cs" />
