@@ -1,7 +1,11 @@
-﻿using Marwin.Core.DTO;
+﻿using Marwin.Core.Domain.Entities;
+using Marwin.Core.Domain.RepositoryContracts;
+using Marwin.Core.DTO;
+using Marwin.Core.Helpers;
 using Marwin.Core.ServiceContracts.CompanyServiceContracts;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,29 +14,82 @@ namespace Marwin.Core.Services
 {
     public class CompanyService : ICompanyGetterService, ICompanyAdderService, ICompanyUpdaterService, ICompanyDeleterService
     {
-        public Task<CompanyResponse> AddCompany(CompanyAddRequest companyAddRequest)
+        private readonly ICompanyRepository _companyRepository;
+
+        public CompanyService(ICompanyRepository companyRepository) 
         {
-            throw new NotImplementedException();
+            _companyRepository = companyRepository;
         }
 
-        public Task<bool> DeleteCompany(CompanyUpdateRequest companyUpdateRequest)
+        public async Task<CompanyResponse> AddCompany(CompanyAddRequest companyAddRequest)
         {
-            throw new NotImplementedException();
+            if(companyAddRequest == null)
+                throw new ArgumentNullException(nameof(companyAddRequest));
+
+            //Валидация объекта
+            ValidationHelper.ModelValidation(companyAddRequest);
+
+            //Сохранение компании в БД
+            Company company = companyAddRequest.ToCompany();
+            company.CompanyId = Guid.NewGuid();
+            await _companyRepository.AddCompany(company);
+
+            return company.ToCompanyResponse();
         }
 
-        public Task<List<CompanyResponse>> GetCompanies()
+        public async Task<bool> DeleteCompany(Guid companyId)
         {
-            throw new NotImplementedException();
+            if(companyId == null)
+                throw new ArgumentNullException(nameof(companyId));
+
+            Company companyToDelete = await _companyRepository.GetCompanyById(companyId);
+            if(companyToDelete == null)
+                return false;
+
+            await _companyRepository.DeleteCompany(companyId);
+            return true;
         }
 
-        public Task<CompanyResponse> GetCompanyById(Guid CompanyId)
+        public async Task<List<CompanyResponse>> GetCompanies()
         {
-            throw new NotImplementedException();
+            List<Company> companies = await _companyRepository.GetCompanies();
+            return companies.Select(c => c.ToCompanyResponse()).ToList();
         }
 
-        public Task<CompanyResponse> UpdateCompany(CompanyUpdateRequest companyUpdateRequest)
+        public async Task<CompanyResponse> GetCompanyById(Guid companyId)
         {
-            throw new NotImplementedException();
+            if (companyId == null)
+                throw new ArgumentNullException(nameof(companyId));
+
+            Company company = await _companyRepository.GetCompanyById(companyId);
+            if(company == null)
+                return null;
+
+            return company.ToCompanyResponse();
+        }
+
+        public async Task<CompanyResponse> UpdateCompany(CompanyUpdateRequest companyUpdateRequest)
+        {
+
+            if (companyUpdateRequest == null)
+                throw new ArgumentNullException(nameof(companyUpdateRequest));
+
+            //Валидация объекта
+            ValidationHelper.ModelValidation(companyUpdateRequest);
+
+            Company matchingCompany = await _companyRepository.GetCompanyById(companyUpdateRequest.CompanyId);
+
+            if (matchingCompany == null)
+                throw new ArgumentException($"Company with id: {companyUpdateRequest.CompanyId} doesn't exist");
+
+            //Обновление компании
+            matchingCompany.CompanyName = companyUpdateRequest.CompanyName;
+            matchingCompany.BIN = companyUpdateRequest.BIN;
+            matchingCompany.Address = companyUpdateRequest.Address;
+            matchingCompany.Note = companyUpdateRequest.Note;
+            await _companyRepository.UpdateCompany(matchingCompany);
+
+            return matchingCompany.ToCompanyResponse();
         }
     }
 }

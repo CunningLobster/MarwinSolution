@@ -25,9 +25,8 @@ namespace Marwin.Core.Domain.RepositoryContracts
         /// Добавить нового сотрудника в компанию с выбранным Идентификатором
         /// </summary>
         /// <param name="employee">Добавляемый сотрудник</param>
-        /// <param name="companyId">Идентификатор компании</param>
         /// <returns>Новый сотрудник</returns>
-        Task<Employee> AddEmployee(Employee employee, Guid companyId);
+        Task<Employee> AddEmployee(Employee employee);
         /// <summary>
         /// Обновить данные о сотруднике
         /// </summary>
@@ -37,9 +36,9 @@ namespace Marwin.Core.Domain.RepositoryContracts
         /// <summary>
         /// Удалить сотрудника с выбранным Идентификатором
         /// </summary>
-        /// <param name="employee">Удаляемый сотрудник</param>
+        /// <param name="employeeId">Идентификатор сотрудникак</param>
         /// <returns>true, если удаление прошло успешно</returns>
-        Task<bool> DeleteEmployee(Employee employee);
+        Task<bool> DeleteEmployee(Guid employeeId);
 
     }
 }

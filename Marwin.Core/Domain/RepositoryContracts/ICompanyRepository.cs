@@ -35,8 +35,8 @@ namespace Marwin.Core.Domain.RepositoryContracts
         /// <summary>
         /// Удалить компанию с выбранным Идентификатором
         /// </summary>
-        /// <param name="company">Удаляемая компания</param>
+        /// <param name="companyId">Идентификатор компании</param>
         /// <returns>true, если удаление прошло успешно</returns>
-        Task<bool> DeleteCompany(Company company);
+        Task<bool> DeleteCompany(Guid companyId);
     }
 }

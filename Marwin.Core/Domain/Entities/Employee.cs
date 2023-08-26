@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,18 +12,22 @@ namespace Marwin.Core.Domain.Entities
         /// <summary>
         /// Идентификатор сорудника
         /// </summary>
+        [Key]
         public Guid EmployeeId { get; set; }
         /// <summary>
         /// Имя сотрудника
         /// </summary>
+        [StringLength(30)]
         public string FirstName { get; set; }
         /// <summary>
         /// Фамилия сотрудника
-        /// </summary>
+        /// </summary>        
+        [StringLength(30)]
         public string LastName { get; set; }
         /// <summary>
         /// Отчество сотрудника
         /// </summary>
+        [StringLength(30)]
         public string ThirdName { get; set; }
         /// <summary>
         /// ИИН сотрудника

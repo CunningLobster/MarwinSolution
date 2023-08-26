@@ -12,8 +12,8 @@ namespace Marwin.Core.ServiceContracts.CompanyServiceContracts
         /// <summary>
         /// Удалить компанию с выбранным Идентификатором
         /// </summary>
-        /// <param name="companyUpdateRequest">Удаляемая компания</param>
+        /// <param name="companyId">Идентификатор компании</param>
         /// <returns>true, если удаление прошло успешно</returns>
-        Task<bool> DeleteCompany(CompanyUpdateRequest companyUpdateRequest);
+        Task<bool> DeleteCompany(Guid companyId);
     }
 }

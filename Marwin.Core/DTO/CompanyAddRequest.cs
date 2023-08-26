@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Marwin.Core.DTO
 {
@@ -12,14 +13,18 @@ namespace Marwin.Core.DTO
         /// <summary>
         /// Наименование компании
         /// </summary>
+        [Required]
         public string CompanyName { get; set; }
         /// <summary>
         /// БИН компании
         /// </summary>
+        [Required]
         public string BIN { get; set; }
         /// <summary>
         /// Физический адрес компании
         /// </summary>
+        [Required]
+        [StringLength(200)]
         public string Address { get; set; }
         /// <summary>
         /// Примечание

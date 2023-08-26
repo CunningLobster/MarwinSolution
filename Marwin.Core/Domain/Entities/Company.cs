@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Marwin.Core.Domain.Entities
 {
@@ -11,6 +12,7 @@ namespace Marwin.Core.Domain.Entities
         /// <summary>
         /// Идентификатор компании
         /// </summary>
+        [Key]
         public Guid CompanyId { get; set; }
         /// <summary>
         /// Наименование компании
@@ -23,6 +25,7 @@ namespace Marwin.Core.Domain.Entities
         /// <summary>
         /// Физический адрес компании
         /// </summary>
+        [StringLength(200)]
         public string Address { get; set; }
         /// <summary>
         /// Примечание

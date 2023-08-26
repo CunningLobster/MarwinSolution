@@ -1,6 +1,7 @@
 ﻿using Marwin.Core.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,4 +53,20 @@ namespace Marwin.Core.DTO
         }
 
     }
+
+    public static class CompanyExtensions
+    {
+        public static CompanyResponse ToCompanyResponse(this Company company)
+        {
+            return new CompanyResponse
+            {
+                CompanyId = company.CompanyId,
+                CompanyName = company.CompanyName,
+                BIN = company.BIN,
+                Address = company.Address,
+                Note = company.Note
+            };
+        }
+    }
+
 }

@@ -12,8 +12,8 @@ namespace Marwin.Core.ServiceContracts.EmployeeServiceContracts
         /// <summary>
         /// Удалить сотрудника с выбранным Идентификатором
         /// </summary>
-        /// <param name="employeeUpdateRequest">Удаляемый сотрудник</param>
+        /// <param name="employeeId">Идентификатор сотрудника</param>
         /// <returns>true, если удаление прошло успешно</returns>
-        Task<bool> DeleteEmployee(EmployeeUpdateRequest employeeUpdateRequest);
+        Task<bool> DeleteEmployee(Guid employeeId);
     }
 }
