@@ -15,7 +15,7 @@ namespace Marwin.Infrastructure.Data
         public DbSet<Employee> Employees { get; set; }
         public ApplicationDbContext() : base("name=DefaultConnectionString")
         {
-        
+            Database.SetInitializer(new MarwinDBInitializer());
         } 
     }
 }

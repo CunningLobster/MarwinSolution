@@ -1,32 +1,24 @@
-﻿namespace Marwin.Infrastructure.Migrations
+﻿using Marwin.Core.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Marwin.Infrastructure.Data
 {
-    using Marwin.Core.Domain.Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-    using System.Runtime.Remoting.Contexts;
-    using System.Xml.Serialization;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<Marwin.Infrastructure.Data.ApplicationDbContext>
+    internal class MarwinDBInitializer : CreateDatabaseIfNotExists<ApplicationDbContext>
     {
-        public Configuration()
+        protected override void Seed(ApplicationDbContext context)
         {
-            AutomaticMigrationsEnabled = false;
-        }
-
-        protected override void Seed(Marwin.Infrastructure.Data.ApplicationDbContext context)
-        {
-            //Инициализация начального списка компаний
             SeedDefaultCompanies(context);
-            //Инициализация начального списка сотрудников
             SeedDefaultEmployees(context);
-
             base.Seed(context);
         }
 
-        private void SeedDefaultCompanies(Marwin.Infrastructure.Data.ApplicationDbContext context)
+        public void SeedDefaultCompanies(ApplicationDbContext context)
         {
             Company[] defaultCommpanies = new Company[]
             {
@@ -70,7 +62,7 @@
             context.Companies.AddOrUpdate(defaultCommpanies);
         }
 
-        private void SeedDefaultEmployees(Marwin.Infrastructure.Data.ApplicationDbContext context)
+        public void SeedDefaultEmployees(ApplicationDbContext context)
         {
             Employee[] defaultEmployees = new Employee[]
             {
@@ -210,5 +202,6 @@
 
             context.Employees.AddOrUpdate(defaultEmployees);
         }
+
     }
 }
