@@ -71,12 +71,19 @@
     <Compile Include="Models\CompanyModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Presenters\CompanyAddPresenter.cs" />
+    <Compile Include="Presenters\CompanyDeletePresenter.cs" />
     <Compile Include="Presenters\HomePresenter.cs" />
     <Compile Include="Views\CompanyAddView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CompanyAddView.Designer.cs">
       <DependentUpon>CompanyAddView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompanyDeleteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CompanyDeleteView.Designer.cs">
+      <DependentUpon>CompanyDeleteView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HomeView.cs">
       <SubType>Form</SubType>
@@ -88,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Views\CompanyAddView.resx">
       <DependentUpon>CompanyAddView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CompanyDeleteView.resx">
+      <DependentUpon>CompanyDeleteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>

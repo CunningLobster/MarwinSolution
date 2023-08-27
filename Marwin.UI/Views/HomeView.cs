@@ -30,7 +30,11 @@ namespace Marwin.UI
 
         private async void CompaniesGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            if (CompaniesGridView.CurrentRow?.Index == e.RowIndex)
+                return;
+
             var row = CompaniesGridView.Rows[e.RowIndex];
+
             Guid companyGuid = Guid.Parse(row.Cells[0].Value.ToString());
             await RefreshEmployeeList(companyGuid);
         }
@@ -85,7 +89,15 @@ namespace Marwin.UI
 
         private void DeleteCompany_Click(object sender, EventArgs e)
         {
+            var selectedRow = CompaniesGridView.CurrentRow;
 
+            //Собрать модель из выбранной строки на таблице
+            CompanyModel companyModel = new CompanyModel { 
+                CompanyId = Guid.Parse(selectedRow.Cells[0].Value.ToString()),
+                CompanyName = selectedRow.Cells[1].Value.ToString()
+            };
+
+            new CompanyDeleteView(this, companyModel).ShowDialog();
         }
     }
 }

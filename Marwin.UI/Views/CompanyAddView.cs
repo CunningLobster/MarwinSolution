@@ -42,13 +42,13 @@ namespace Marwin.UI.Views
 
             //Добавление компании в БД
             await _companyAddPresenter.AddCompany(companyModel);
+            await _homeView.RefreshCompanyList();
 
             Close();
         }
 
         private async void CompanyAddView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            await _homeView.RefreshCompanyList();
         }
     }
 }
