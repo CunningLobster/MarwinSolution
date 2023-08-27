@@ -58,7 +58,7 @@ namespace Marwin.UI.Views.Employee
             };
 
             await _employeeUpdatePresenter.UpdateEmployee(employeeModel);
-            await _homeView.RefreshCompanyList();
+            await _homeView.RefreshEmployeeList(employeeModel.CompanyId);
 
             Close();
         }

@@ -40,7 +40,7 @@ namespace Marwin.UI.Views.Employee
         private async void DeleteButton_Click(object sender, EventArgs e)
         {
             await _employeeDeletePresenter.DeleteEmployee(_employeeModel.EmployeeId);
-            await _homeView.RefreshCompanyList();
+            await _homeView.RefreshEmployeeList(_employeeModel.CompanyId);
 
             Close();
         }

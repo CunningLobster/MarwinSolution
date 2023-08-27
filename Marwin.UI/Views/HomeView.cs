@@ -48,7 +48,7 @@ namespace Marwin.UI
         /// </summary>
         /// <param name="companyId"></param>
         /// <returns></returns>
-        private async Task RefreshEmployeeList(Guid companyId)
+        public async Task RefreshEmployeeList(Guid companyId)
         {
             EmployeesGridView.Rows.Clear();
 
@@ -152,14 +152,16 @@ namespace Marwin.UI
 
         private void DeleteEmployeeButton_Click(object sender, EventArgs e)
         {
-            var selectedRow = EmployeesGridView.CurrentRow;
+            var selectedEmployeeRow = EmployeesGridView.CurrentRow;
+            var selectedCompanyRow = CompaniesGridView.CurrentRow;
 
             //Собрать модель из выбранной строки на таблице
             EmployeeModel employeeModel = new EmployeeModel
             {
-                EmployeeId = Guid.Parse(selectedRow.Cells[0].Value.ToString()),
-                LastName = selectedRow.Cells[1].Value.ToString(),
-                FirstName = selectedRow.Cells[2].Value.ToString()
+                EmployeeId = Guid.Parse(selectedEmployeeRow.Cells[0].Value.ToString()),
+                LastName = selectedEmployeeRow.Cells[1].Value.ToString(),
+                FirstName = selectedEmployeeRow.Cells[2].Value.ToString(),
+                CompanyId = Guid.Parse(selectedCompanyRow.Cells[0].Value.ToString())
             };
 
             new EmployeeDeleteView(this, employeeModel).ShowDialog();
