@@ -38,7 +38,7 @@
             this.HeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HeaderLabel.Location = new System.Drawing.Point(12, 19);
             this.HeaderLabel.Name = "HeaderLabel";
-            this.HeaderLabel.Size = new System.Drawing.Size(546, 30);
+            this.HeaderLabel.Size = new System.Drawing.Size(560, 60);
             this.HeaderLabel.TabIndex = 9;
             this.HeaderLabel.Text = "Вы уверены, что хотите удалить компанию?";
             // 
@@ -72,7 +72,8 @@
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.HeaderLabel);
             this.Name = "CompanyDeleteView";
-            this.Text = "CompanyDeleteView";
+            this.Text = "Удаление компании";
+            this.Load += new System.EventHandler(this.CompanyDeleteView_Load);
             this.ResumeLayout(false);
 
         }

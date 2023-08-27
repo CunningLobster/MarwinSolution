@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Marwin.Core.Services
 {
-    public class CompanyService : ICompanyGetterService, ICompanyAdderService, ICompanyUpdaterService, ICompanyDeleterService
+    public class CompanyService : ICompanyGetterService, ICompanyUpdaterService, ICompanyAdderService, ICompanyDeleterService
     {
         private readonly ICompanyRepository _companyRepository;
 

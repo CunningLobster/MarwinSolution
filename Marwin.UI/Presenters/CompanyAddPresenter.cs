@@ -34,7 +34,7 @@ namespace Marwin.UI.Presenters
                 Note = companyModel.Note
             };
 
-            //Добавить компанию с помощтю сервиса
+            //Добавить компанию с помощью сервиса
             await _companyAdderService.AddCompany(companyAddRequest);
         }
     }

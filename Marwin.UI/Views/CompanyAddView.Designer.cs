@@ -152,7 +152,7 @@
             this.Controls.Add(this.AddressLabel);
             this.Controls.Add(this.CompanyNameLabel);
             this.Name = "CompanyAddView";
-            this.Text = "CompanyAddView";
+            this.Text = "Добавить компанию";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CompanyAddView_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

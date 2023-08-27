@@ -211,6 +211,7 @@
             this.UpdateCompany.TabIndex = 5;
             this.UpdateCompany.Text = "Обновить компанию";
             this.UpdateCompany.UseVisualStyleBackColor = true;
+            this.UpdateCompany.Click += new System.EventHandler(this.UpdateCompany_Click);
             // 
             // DeleteCompany
             // 
@@ -243,7 +244,7 @@
             this.Controls.Add(this.CompaniesGridView);
             this.Controls.Add(this.CompanyTableLabel);
             this.Name = "HomeView";
-            this.Text = "Companies";
+            this.Text = "Companies Manager";
             this.Load += new System.EventHandler(this.HomeView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesGridView)).EndInit();

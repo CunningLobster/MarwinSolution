@@ -38,5 +38,10 @@ namespace Marwin.UI.Views
 
             Close();
         }
+
+        private void CompanyDeleteView_Load(object sender, EventArgs e)
+        {
+            HeaderLabel.Text = $"Вы действительно хотите удалить компанию {_companyModel.CompanyName}?";
+        }
     }
 }

@@ -99,5 +99,22 @@ namespace Marwin.UI
 
             new CompanyDeleteView(this, companyModel).ShowDialog();
         }
+
+        private void UpdateCompany_Click(object sender, EventArgs e)
+        {
+            var selectedRow = CompaniesGridView.CurrentRow;
+
+            //Собрать модель из выбранной строки на таблице
+            CompanyModel companyModel = new CompanyModel
+            {
+                CompanyId = Guid.Parse(selectedRow.Cells[0].Value.ToString()),
+                CompanyName = selectedRow.Cells[1].Value.ToString(),
+                BIN = selectedRow.Cells[2].Value.ToString(),
+                Address = selectedRow.Cells[3].Value.ToString(),
+                Note = selectedRow.Cells[4].Value.ToString()
+            };
+
+            new CompanyUpdateView(this, companyModel).ShowDialog();
+        }
     }
 }
