@@ -48,6 +48,9 @@
             this.DeleteCompany = new System.Windows.Forms.Button();
             this.companyModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.DeleteEmployeeButton = new System.Windows.Forms.Button();
+            this.UpdateEmployeeButton = new System.Windows.Forms.Button();
+            this.AddEmployeeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyModelBindingSource)).BeginInit();
@@ -231,11 +234,43 @@
             // 
             this.companyModelBindingSource1.DataSource = typeof(Marwin.UI.Models.CompanyModel);
             // 
+            // DeleteEmployeeButton
+            // 
+            this.DeleteEmployeeButton.Location = new System.Drawing.Point(1065, 391);
+            this.DeleteEmployeeButton.Name = "DeleteEmployeeButton";
+            this.DeleteEmployeeButton.Size = new System.Drawing.Size(156, 51);
+            this.DeleteEmployeeButton.TabIndex = 9;
+            this.DeleteEmployeeButton.Text = "Удалить сотрудника";
+            this.DeleteEmployeeButton.UseVisualStyleBackColor = true;
+            // 
+            // UpdateEmployeeButton
+            // 
+            this.UpdateEmployeeButton.Location = new System.Drawing.Point(843, 390);
+            this.UpdateEmployeeButton.Name = "UpdateEmployeeButton";
+            this.UpdateEmployeeButton.Size = new System.Drawing.Size(159, 51);
+            this.UpdateEmployeeButton.TabIndex = 8;
+            this.UpdateEmployeeButton.Text = "Обновить сотрудника";
+            this.UpdateEmployeeButton.UseVisualStyleBackColor = true;
+            this.UpdateEmployeeButton.Click += new System.EventHandler(this.UpdateEmployeeButton_Click);
+            // 
+            // AddEmployeeButton
+            // 
+            this.AddEmployeeButton.Location = new System.Drawing.Point(679, 391);
+            this.AddEmployeeButton.Name = "AddEmployeeButton";
+            this.AddEmployeeButton.Size = new System.Drawing.Size(158, 51);
+            this.AddEmployeeButton.TabIndex = 7;
+            this.AddEmployeeButton.Text = "Добавить сотрудника";
+            this.AddEmployeeButton.UseVisualStyleBackColor = true;
+            this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
+            // 
             // HomeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 717);
+            this.Controls.Add(this.DeleteEmployeeButton);
+            this.Controls.Add(this.UpdateEmployeeButton);
+            this.Controls.Add(this.AddEmployeeButton);
             this.Controls.Add(this.DeleteCompany);
             this.Controls.Add(this.UpdateCompany);
             this.Controls.Add(this.AddButton);
@@ -275,6 +310,9 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button UpdateCompany;
         private System.Windows.Forms.Button DeleteCompany;
+        private System.Windows.Forms.Button DeleteEmployeeButton;
+        private System.Windows.Forms.Button UpdateEmployeeButton;
+        private System.Windows.Forms.Button AddEmployeeButton;
     }
 }
 

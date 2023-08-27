@@ -1,12 +1,16 @@
 ﻿using Marwin.UI.Models;
 using Marwin.UI.Presenters;
+using Marwin.UI.Presenters.Company;
 using Marwin.UI.Views;
+using Marwin.UI.Views.Company;
+using Marwin.UI.Views.Employee;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -115,6 +119,35 @@ namespace Marwin.UI
             };
 
             new CompanyUpdateView(this, companyModel).ShowDialog();
+        }
+
+        private void AddEmployeeButton_Click(object sender, EventArgs e)
+        {
+            EmployeeModel employeeModel = new EmployeeModel
+            {
+                CompanyId = Guid.Parse(CompaniesGridView.CurrentRow.Cells[0].Value.ToString())
+            };
+
+            new EmployeeAddView(this, employeeModel).ShowDialog();
+        }
+
+        private void UpdateEmployeeButton_Click(object sender, EventArgs e)
+        {
+            var selectedEmployeeRow = EmployeesGridView.CurrentRow;
+            var selectedCompanyRow = CompaniesGridView.CurrentRow;
+
+            //Собрать модель из выбранной строки на таблице
+            EmployeeModel employeeModel = new EmployeeModel
+            {
+                EmployeeId = Guid.Parse(selectedEmployeeRow.Cells[0].Value.ToString()),
+                LastName = selectedEmployeeRow.Cells[1].Value.ToString(),
+                FirstName = selectedEmployeeRow.Cells[2].Value.ToString(),
+                ThirdName = selectedEmployeeRow.Cells[3].Value.ToString(),
+                TIN = selectedEmployeeRow.Cells[4].Value.ToString(),
+                CompanyId = Guid.Parse(selectedCompanyRow.Cells[0].Value.ToString())
+            };
+
+            new EmployeeUpdateView(this, employeeModel).ShowDialog();
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Marwin.UI.Models;
-using Marwin.UI.Presenters;
+using Marwin.UI.Presenters.Company;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Marwin.UI.Views
+namespace Marwin.UI.Views.Company
 {
     public partial class CompanyUpdateView : Form
     {

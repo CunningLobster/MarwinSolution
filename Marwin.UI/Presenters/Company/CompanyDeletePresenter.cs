@@ -1,12 +1,13 @@
 ﻿using Marwin.Core.ServiceContracts.CompanyServiceContracts;
 using Marwin.UI.Views;
+using Marwin.UI.Views.Company;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marwin.UI.Presenters
+namespace Marwin.UI.Presenters.Company
 {
     public class CompanyDeletePresenter
     {

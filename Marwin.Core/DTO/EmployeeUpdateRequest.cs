@@ -41,7 +41,7 @@ namespace Marwin.Core.DTO
         /// <summary>
         /// Идентфикатор компании
         /// </summary>
-        public Guid CompanyId { get; }
+        public Guid CompanyId { get; set; }
 
         public Employee ToEmployee()
         {

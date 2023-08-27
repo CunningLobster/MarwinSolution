@@ -70,27 +70,41 @@
   <ItemGroup>
     <Compile Include="Models\CompanyModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
-    <Compile Include="Presenters\CompanyAddPresenter.cs" />
-    <Compile Include="Presenters\CompanyDeletePresenter.cs" />
-    <Compile Include="Presenters\CompanyUpdatePresenter.cs" />
+    <Compile Include="Presenters\Company\CompanyAddPresenter.cs" />
+    <Compile Include="Presenters\Company\CompanyDeletePresenter.cs" />
+    <Compile Include="Presenters\Company\CompanyUpdatePresenter.cs" />
+    <Compile Include="Presenters\Employee\EmployeeAddPresenter.cs" />
+    <Compile Include="Presenters\Employee\EmployeeUpdatePresenter.cs" />
     <Compile Include="Presenters\HomePresenter.cs" />
-    <Compile Include="Views\CompanyAddView.cs">
+    <Compile Include="Views\Company\CompanyAddView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CompanyAddView.Designer.cs">
+    <Compile Include="Views\Company\CompanyAddView.Designer.cs">
       <DependentUpon>CompanyAddView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CompanyDeleteView.cs">
+    <Compile Include="Views\Company\CompanyDeleteView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CompanyDeleteView.Designer.cs">
+    <Compile Include="Views\Company\CompanyDeleteView.Designer.cs">
       <DependentUpon>CompanyDeleteView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CompanyUpdateView.cs">
+    <Compile Include="Views\Company\CompanyUpdateView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CompanyUpdateView.Designer.cs">
+    <Compile Include="Views\Company\CompanyUpdateView.Designer.cs">
       <DependentUpon>CompanyUpdateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee\EmployeeAddView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Employee\EmployeeAddView.Designer.cs">
+      <DependentUpon>EmployeeAddView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee\EmployeeUpdateView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Employee\EmployeeUpdateView.Designer.cs">
+      <DependentUpon>EmployeeUpdateView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\HomeView.cs">
       <SubType>Form</SubType>
@@ -100,14 +114,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\CompanyAddView.resx">
+    <EmbeddedResource Include="Views\Company\CompanyAddView.resx">
       <DependentUpon>CompanyAddView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CompanyDeleteView.resx">
+    <EmbeddedResource Include="Views\Company\CompanyDeleteView.resx">
       <DependentUpon>CompanyDeleteView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CompanyUpdateView.resx">
+    <EmbeddedResource Include="Views\Company\CompanyUpdateView.resx">
       <DependentUpon>CompanyUpdateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Employee\EmployeeAddView.resx">
+      <DependentUpon>EmployeeAddView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Employee\EmployeeUpdateView.resx">
+      <DependentUpon>EmployeeUpdateView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>

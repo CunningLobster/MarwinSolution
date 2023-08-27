@@ -1,4 +1,4 @@
-﻿namespace Marwin.UI.Views
+﻿namespace Marwin.UI.Views.Company
 {
     partial class CompanyDeleteView
     {

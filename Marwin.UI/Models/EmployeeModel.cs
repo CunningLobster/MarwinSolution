@@ -29,6 +29,10 @@ namespace Marwin.UI.Models
         /// ИИН сотрудника
         /// </summary>
         public string TIN { get; set; }
+        /// <summary>
+        /// Идентфикатор компании
+        /// </summary>
+        public Guid CompanyId { get; set; }
 
     }
 }
