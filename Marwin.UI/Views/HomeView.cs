@@ -1,5 +1,6 @@
 ﻿using Marwin.UI.Models;
 using Marwin.UI.Presenters;
+using Marwin.UI.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,17 +25,7 @@ namespace Marwin.UI
 
         private async void HomeView_Load(object sender, EventArgs e)
         {
-            List<CompanyModel> companyModels = await _homePresenter.GetCompanies();
-            foreach (CompanyModel company in companyModels) 
-            {
-                CompaniesGridView.Rows.Add(new string[] { 
-                    company.CompanyId.ToString(), 
-                    company.CompanyName, 
-                    company.BIN, 
-                    company.Address, 
-                    company.Note 
-                });
-            }
+            await RefreshCompanyList();
         }
 
         private async void CompaniesGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -64,6 +55,37 @@ namespace Marwin.UI
                     employee.TIN
                 });
             }
+        }
+
+        /// <summary>
+        /// Обновить список компаний
+        /// </summary>
+        /// <returns></returns>
+        public async Task RefreshCompanyList()
+        {
+            CompaniesGridView.Rows.Clear();
+
+            List<CompanyModel> companyModels = await _homePresenter.GetCompanies();
+            foreach (CompanyModel company in companyModels)
+            {
+                CompaniesGridView.Rows.Add(new string[] {
+                    company.CompanyId.ToString(),
+                    company.CompanyName,
+                    company.BIN,
+                    company.Address,
+                    company.Note
+                });
+            }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            new CompanyAddView(this).ShowDialog();
+        }
+
+        private void DeleteCompany_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
