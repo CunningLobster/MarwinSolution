@@ -31,11 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.CompanyTableLabel = new System.Windows.Forms.Label();
             this.CompaniesGridView = new System.Windows.Forms.DataGridView();
-            this.CompanyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeesGridView = new System.Windows.Forms.DataGridView();
             this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +46,11 @@
             this.DeleteEmployeeButton = new System.Windows.Forms.Button();
             this.UpdateEmployeeButton = new System.Windows.Forms.Button();
             this.AddEmployeeButton = new System.Windows.Forms.Button();
+            this.CompanyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyModelBindingSource)).BeginInit();
@@ -85,47 +85,6 @@
             this.CompaniesGridView.Size = new System.Drawing.Size(558, 253);
             this.CompaniesGridView.TabIndex = 1;
             this.CompaniesGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_RowEnter);
-            // 
-            // CompanyId
-            // 
-            this.CompanyId.HeaderText = "CompanyId";
-            this.CompanyId.MinimumWidth = 6;
-            this.CompanyId.Name = "CompanyId";
-            this.CompanyId.ReadOnly = true;
-            this.CompanyId.Visible = false;
-            this.CompanyId.Width = 125;
-            // 
-            // CompanyName
-            // 
-            this.CompanyName.HeaderText = "Наименование";
-            this.CompanyName.MinimumWidth = 6;
-            this.CompanyName.Name = "CompanyName";
-            this.CompanyName.ReadOnly = true;
-            this.CompanyName.Width = 125;
-            // 
-            // BIN
-            // 
-            this.BIN.HeaderText = "ИНН";
-            this.BIN.MinimumWidth = 6;
-            this.BIN.Name = "BIN";
-            this.BIN.ReadOnly = true;
-            this.BIN.Width = 125;
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Физический Адрес";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 125;
-            // 
-            // Note
-            // 
-            this.Note.HeaderText = "Примечание";
-            this.Note.MinimumWidth = 6;
-            this.Note.Name = "Note";
-            this.Note.ReadOnly = true;
-            this.Note.Width = 125;
             // 
             // EmployeesGridView
             // 
@@ -263,6 +222,47 @@
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
             this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
             // 
+            // CompanyId
+            // 
+            this.CompanyId.HeaderText = "CompanyId";
+            this.CompanyId.MinimumWidth = 6;
+            this.CompanyId.Name = "CompanyId";
+            this.CompanyId.ReadOnly = true;
+            this.CompanyId.Visible = false;
+            this.CompanyId.Width = 125;
+            // 
+            // CompanyName
+            // 
+            this.CompanyName.HeaderText = "Наименование";
+            this.CompanyName.MinimumWidth = 6;
+            this.CompanyName.Name = "CompanyName";
+            this.CompanyName.ReadOnly = true;
+            this.CompanyName.Width = 125;
+            // 
+            // BIN
+            // 
+            this.BIN.HeaderText = "БИН";
+            this.BIN.MinimumWidth = 6;
+            this.BIN.Name = "BIN";
+            this.BIN.ReadOnly = true;
+            this.BIN.Width = 125;
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Физический Адрес";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 125;
+            // 
+            // Note
+            // 
+            this.Note.HeaderText = "Примечание";
+            this.Note.MinimumWidth = 6;
+            this.Note.Name = "Note";
+            this.Note.ReadOnly = true;
+            this.Note.Width = 125;
+            // 
             // HomeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -302,17 +302,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThirdName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BIN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button UpdateCompany;
         private System.Windows.Forms.Button DeleteCompany;
         private System.Windows.Forms.Button DeleteEmployeeButton;
         private System.Windows.Forms.Button UpdateEmployeeButton;
         private System.Windows.Forms.Button AddEmployeeButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BIN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
     }
 }
 
