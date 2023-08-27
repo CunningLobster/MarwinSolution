@@ -46,11 +46,15 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.UpdateCompany = new System.Windows.Forms.Button();
             this.DeleteCompany = new System.Windows.Forms.Button();
-            this.companyModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.DeleteEmployeeButton = new System.Windows.Forms.Button();
             this.UpdateEmployeeButton = new System.Windows.Forms.Button();
             this.AddEmployeeButton = new System.Windows.Forms.Button();
+            this.ImportCSVButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.companyModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.companyModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ExportCSVButton = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyModelBindingSource)).BeginInit();
@@ -226,14 +230,6 @@
             this.DeleteCompany.UseVisualStyleBackColor = true;
             this.DeleteCompany.Click += new System.EventHandler(this.DeleteCompany_Click);
             // 
-            // companyModelBindingSource
-            // 
-            this.companyModelBindingSource.DataSource = typeof(Marwin.UI.Models.CompanyModel);
-            // 
-            // companyModelBindingSource1
-            // 
-            this.companyModelBindingSource1.DataSource = typeof(Marwin.UI.Models.CompanyModel);
-            // 
             // DeleteEmployeeButton
             // 
             this.DeleteEmployeeButton.Location = new System.Drawing.Point(1065, 391);
@@ -264,11 +260,45 @@
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
             this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
             // 
+            // ImportCSVButton
+            // 
+            this.ImportCSVButton.Location = new System.Drawing.Point(12, 467);
+            this.ImportCSVButton.Name = "ImportCSVButton";
+            this.ImportCSVButton.Size = new System.Drawing.Size(563, 51);
+            this.ImportCSVButton.TabIndex = 10;
+            this.ImportCSVButton.Text = "Загрузить список сотрудников из CSV файла";
+            this.ImportCSVButton.UseVisualStyleBackColor = true;
+            this.ImportCSVButton.Click += new System.EventHandler(this.ImportCSVButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // companyModelBindingSource
+            // 
+            this.companyModelBindingSource.DataSource = typeof(Marwin.UI.Models.CompanyModel);
+            // 
+            // companyModelBindingSource1
+            // 
+            this.companyModelBindingSource1.DataSource = typeof(Marwin.UI.Models.CompanyModel);
+            // 
+            // ExportCSVButton
+            // 
+            this.ExportCSVButton.Location = new System.Drawing.Point(679, 467);
+            this.ExportCSVButton.Name = "ExportCSVButton";
+            this.ExportCSVButton.Size = new System.Drawing.Size(542, 51);
+            this.ExportCSVButton.TabIndex = 11;
+            this.ExportCSVButton.Text = " Выгрузить список сотрудников в CSV файл";
+            this.ExportCSVButton.UseVisualStyleBackColor = true;
+            this.ExportCSVButton.Click += new System.EventHandler(this.ExportCSVButton_Click);
+            // 
             // HomeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 498);
+            this.ClientSize = new System.Drawing.Size(1252, 544);
+            this.Controls.Add(this.ExportCSVButton);
+            this.Controls.Add(this.ImportCSVButton);
             this.Controls.Add(this.DeleteEmployeeButton);
             this.Controls.Add(this.UpdateEmployeeButton);
             this.Controls.Add(this.AddEmployeeButton);
@@ -314,6 +344,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BIN;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
+        private System.Windows.Forms.Button ImportCSVButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button ExportCSVButton;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

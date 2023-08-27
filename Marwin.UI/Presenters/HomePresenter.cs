@@ -4,6 +4,7 @@ using Marwin.Core.ServiceContracts.EmployeeServiceContracts;
 using Marwin.UI.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,14 @@ namespace Marwin.UI.Presenters
 
         private readonly ICompanyGetterService _companyGetterService;
         private readonly IEmployeeGetterService _employeeGetterService;
+        private readonly ICsvService _csvService;
 
         public HomePresenter(HomeView homeView)
         {
             _homeView = homeView;
             _companyGetterService = Program.GetService<ICompanyGetterService>();
             _employeeGetterService = Program.GetService<IEmployeeGetterService>();
+            _csvService = Program.GetService<ICsvService>();
         }
 
         public async Task<List<CompanyModel>> GetCompanies()
@@ -45,10 +48,10 @@ namespace Marwin.UI.Presenters
             return companyModels;
         }
 
-        public async Task<List<EmployeeModel>> GetEmployeesByCompanyId(Guid conmpanyId)
+        public async Task<List<EmployeeModel>> GetEmployeesByCompanyId(Guid companyId)
         {
             //Получить ДТО объекты с помощью сервиса
-            List<EmployeeResponse> employees = await _employeeGetterService.GetEmployeesByCompanyId(conmpanyId);
+            List<EmployeeResponse> employees = await _employeeGetterService.GetEmployeesByCompanyId(companyId);
 
             //Привязать данные к модели для отображения на экране
             List<EmployeeModel> employeeModels = new List<EmployeeModel>();
@@ -65,6 +68,16 @@ namespace Marwin.UI.Presenters
             }
 
             return employeeModels;
+        }
+
+        public async Task<MemoryStream> ExportEmployeesCSV(Guid companyId)
+        {
+            return await _csvService.ExportEmployeesCSV(companyId);
+        }
+
+        public async Task ImportEmployeesCSV(FileStream stream, Guid companyId)
+        {
+            await _csvService.ImportEmployeesCSV(stream, companyId);
         }
     }
 }

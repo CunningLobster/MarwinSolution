@@ -9,11 +9,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Marwin.UI
 {
@@ -165,6 +167,45 @@ namespace Marwin.UI
             };
 
             new EmployeeDeleteView(this, employeeModel).ShowDialog();
+        }
+
+        private async void ExportCSVButton_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.FileName = "";
+            saveFileDialog1.Filter = "CSV File|*.csv";
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            // получаем выбранный файл
+            string path = saveFileDialog1.FileName;
+
+            Guid companyId = Guid.Parse(CompaniesGridView.CurrentRow.Cells[0].Value.ToString());
+            MemoryStream memoryStream = await _homePresenter.ExportEmployeesCSV(companyId);
+            using (StreamReader reader = new StreamReader(memoryStream))
+            {
+                string s = reader.ReadToEnd();
+
+                // сохраняем текст в файл
+                File.WriteAllBytes(path, Encoding.Default.GetBytes(s.ToArray()));
+            }
+        }
+
+        private async void ImportCSVButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.FileName = "";
+            openFileDialog1.Filter = "CSV File|*.csv";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            Guid companyId = Guid.Parse(CompaniesGridView.CurrentRow.Cells[0].Value.ToString());
+            // читаем файл в строку
+            using (FileStream fileStream = File.OpenRead(openFileDialog1.FileName))
+            { 
+                await _homePresenter.ImportEmployeesCSV(fileStream, companyId);
+            }
+
+            await RefreshEmployeeList(companyId);
         }
     }
 }

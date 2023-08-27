@@ -36,6 +36,8 @@ namespace Marwin.UI
             services.AddScoped<ICompanyUpdaterService, CompanyService>();
             services.AddScoped<ICompanyDeleterService, CompanyService>();
 
+            services.AddScoped<ICsvService, EmployeeService>();
+
             ServiceProvider = services.BuildServiceProvider();
         }
 
