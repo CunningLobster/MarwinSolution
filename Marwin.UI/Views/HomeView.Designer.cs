@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.CompanyTableLabel = new System.Windows.Forms.Label();
             this.CompaniesGridView = new System.Windows.Forms.DataGridView();
+            this.CompanyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeesGridView = new System.Windows.Forms.DataGridView();
             this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,11 +51,6 @@
             this.DeleteEmployeeButton = new System.Windows.Forms.Button();
             this.UpdateEmployeeButton = new System.Windows.Forms.Button();
             this.AddEmployeeButton = new System.Windows.Forms.Button();
-            this.CompanyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyModelBindingSource)).BeginInit();
@@ -85,6 +85,47 @@
             this.CompaniesGridView.Size = new System.Drawing.Size(558, 253);
             this.CompaniesGridView.TabIndex = 1;
             this.CompaniesGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_RowEnter);
+            // 
+            // CompanyId
+            // 
+            this.CompanyId.HeaderText = "CompanyId";
+            this.CompanyId.MinimumWidth = 6;
+            this.CompanyId.Name = "CompanyId";
+            this.CompanyId.ReadOnly = true;
+            this.CompanyId.Visible = false;
+            this.CompanyId.Width = 125;
+            // 
+            // CompanyName
+            // 
+            this.CompanyName.HeaderText = "Наименование";
+            this.CompanyName.MinimumWidth = 6;
+            this.CompanyName.Name = "CompanyName";
+            this.CompanyName.ReadOnly = true;
+            this.CompanyName.Width = 125;
+            // 
+            // BIN
+            // 
+            this.BIN.HeaderText = "БИН";
+            this.BIN.MinimumWidth = 6;
+            this.BIN.Name = "BIN";
+            this.BIN.ReadOnly = true;
+            this.BIN.Width = 125;
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Физический Адрес";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 125;
+            // 
+            // Note
+            // 
+            this.Note.HeaderText = "Примечание";
+            this.Note.MinimumWidth = 6;
+            this.Note.Name = "Note";
+            this.Note.ReadOnly = true;
+            this.Note.Width = 125;
             // 
             // EmployeesGridView
             // 
@@ -201,6 +242,7 @@
             this.DeleteEmployeeButton.TabIndex = 9;
             this.DeleteEmployeeButton.Text = "Удалить сотрудника";
             this.DeleteEmployeeButton.UseVisualStyleBackColor = true;
+            this.DeleteEmployeeButton.Click += new System.EventHandler(this.DeleteEmployeeButton_Click);
             // 
             // UpdateEmployeeButton
             // 
@@ -222,52 +264,11 @@
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
             this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
             // 
-            // CompanyId
-            // 
-            this.CompanyId.HeaderText = "CompanyId";
-            this.CompanyId.MinimumWidth = 6;
-            this.CompanyId.Name = "CompanyId";
-            this.CompanyId.ReadOnly = true;
-            this.CompanyId.Visible = false;
-            this.CompanyId.Width = 125;
-            // 
-            // CompanyName
-            // 
-            this.CompanyName.HeaderText = "Наименование";
-            this.CompanyName.MinimumWidth = 6;
-            this.CompanyName.Name = "CompanyName";
-            this.CompanyName.ReadOnly = true;
-            this.CompanyName.Width = 125;
-            // 
-            // BIN
-            // 
-            this.BIN.HeaderText = "БИН";
-            this.BIN.MinimumWidth = 6;
-            this.BIN.Name = "BIN";
-            this.BIN.ReadOnly = true;
-            this.BIN.Width = 125;
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Физический Адрес";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 125;
-            // 
-            // Note
-            // 
-            this.Note.HeaderText = "Примечание";
-            this.Note.MinimumWidth = 6;
-            this.Note.Name = "Note";
-            this.Note.ReadOnly = true;
-            this.Note.Width = 125;
-            // 
             // HomeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 717);
+            this.ClientSize = new System.Drawing.Size(1252, 498);
             this.Controls.Add(this.DeleteEmployeeButton);
             this.Controls.Add(this.UpdateEmployeeButton);
             this.Controls.Add(this.AddEmployeeButton);

@@ -149,5 +149,20 @@ namespace Marwin.UI
 
             new EmployeeUpdateView(this, employeeModel).ShowDialog();
         }
+
+        private void DeleteEmployeeButton_Click(object sender, EventArgs e)
+        {
+            var selectedRow = EmployeesGridView.CurrentRow;
+
+            //Собрать модель из выбранной строки на таблице
+            EmployeeModel employeeModel = new EmployeeModel
+            {
+                EmployeeId = Guid.Parse(selectedRow.Cells[0].Value.ToString()),
+                LastName = selectedRow.Cells[1].Value.ToString(),
+                FirstName = selectedRow.Cells[2].Value.ToString()
+            };
+
+            new EmployeeDeleteView(this, employeeModel).ShowDialog();
+        }
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Presenters\Company\CompanyDeletePresenter.cs" />
     <Compile Include="Presenters\Company\CompanyUpdatePresenter.cs" />
     <Compile Include="Presenters\Employee\EmployeeAddPresenter.cs" />
+    <Compile Include="Presenters\Employee\EmployeeDeletePresenter.cs" />
     <Compile Include="Presenters\Employee\EmployeeUpdatePresenter.cs" />
     <Compile Include="Presenters\HomePresenter.cs" />
     <Compile Include="Views\Company\CompanyAddView.cs">
@@ -93,6 +94,12 @@
     </Compile>
     <Compile Include="Views\Company\CompanyUpdateView.Designer.cs">
       <DependentUpon>CompanyUpdateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee\EmployeeDeleteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Employee\EmployeeDeleteView.Designer.cs">
+      <DependentUpon>EmployeeDeleteView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Employee\EmployeeAddView.cs">
       <SubType>Form</SubType>
@@ -122,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Company\CompanyUpdateView.resx">
       <DependentUpon>CompanyUpdateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Employee\EmployeeDeleteView.resx">
+      <DependentUpon>EmployeeDeleteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Employee\EmployeeAddView.resx">
       <DependentUpon>EmployeeAddView.cs</DependentUpon>
