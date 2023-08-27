@@ -118,6 +118,7 @@
             // AddButton
             // 
             this.AddButton.Location = new System.Drawing.Point(117, 369);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(102, 57);
             this.AddButton.TabIndex = 9;
@@ -128,6 +129,7 @@
             // CancelButton
             // 
             this.CancelButton.Location = new System.Drawing.Point(304, 369);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(102, 57);
             this.CancelButton.TabIndex = 10;
@@ -139,7 +141,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(551, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.HeaderLabel);
@@ -152,6 +157,7 @@
             this.Controls.Add(this.AddressLabel);
             this.Controls.Add(this.CompanyNameLabel);
             this.Name = "CompanyAddView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Добавить компанию";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CompanyAddView_FormClosing);
             this.ResumeLayout(false);

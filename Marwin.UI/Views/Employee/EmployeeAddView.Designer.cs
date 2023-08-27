@@ -44,6 +44,7 @@
             // CancelButton
             // 
             this.CancelButton.Location = new System.Drawing.Point(296, 284);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(102, 57);
             this.CancelButton.TabIndex = 21;
@@ -54,6 +55,7 @@
             // AddButton
             // 
             this.AddButton.Location = new System.Drawing.Point(109, 284);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(102, 57);
             this.AddButton.TabIndex = 20;
@@ -73,6 +75,8 @@
             // TINText
             // 
             this.TINText.Location = new System.Drawing.Point(246, 213);
+            this.TINText.MaximumSize = new System.Drawing.Size(284, 22);
+            this.TINText.MinimumSize = new System.Drawing.Size(284, 22);
             this.TINText.Name = "TINText";
             this.TINText.Size = new System.Drawing.Size(284, 22);
             this.TINText.TabIndex = 17;
@@ -138,7 +142,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(549, 364);
+            this.ControlBox = false;
             this.Controls.Add(this.ThirdNameText);
             this.Controls.Add(this.ThirdName);
             this.Controls.Add(this.CancelButton);
@@ -151,6 +158,7 @@
             this.Controls.Add(this.FirstNameLabel);
             this.Controls.Add(this.LastNameLabel);
             this.Name = "EmployeeAddView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Добавить сотрудника";
             this.ResumeLayout(false);
             this.PerformLayout();

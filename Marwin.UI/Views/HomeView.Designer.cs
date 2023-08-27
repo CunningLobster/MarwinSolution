@@ -51,10 +51,11 @@
             this.AddEmployeeButton = new System.Windows.Forms.Button();
             this.ImportCSVButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.companyModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ExportCSVButton = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.HeaderLabel = new System.Windows.Forms.Label();
+            this.companyModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.companyModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyModelBindingSource)).BeginInit();
@@ -63,6 +64,7 @@
             // 
             // CompanyTableLabel
             // 
+            this.CompanyTableLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CompanyTableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CompanyTableLabel.Location = new System.Drawing.Point(13, 98);
             this.CompanyTableLabel.Name = "CompanyTableLabel";
@@ -74,6 +76,8 @@
             // 
             this.CompaniesGridView.AllowUserToAddRows = false;
             this.CompaniesGridView.AllowUserToDeleteRows = false;
+            this.CompaniesGridView.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.CompaniesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CompaniesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CompaniesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CompanyId,
@@ -81,12 +85,12 @@
             this.BIN,
             this.Address,
             this.Note});
-            this.CompaniesGridView.Location = new System.Drawing.Point(17, 131);
+            this.CompaniesGridView.Location = new System.Drawing.Point(12, 130);
             this.CompaniesGridView.Name = "CompaniesGridView";
             this.CompaniesGridView.ReadOnly = true;
             this.CompaniesGridView.RowHeadersWidth = 51;
             this.CompaniesGridView.RowTemplate.Height = 24;
-            this.CompaniesGridView.Size = new System.Drawing.Size(558, 253);
+            this.CompaniesGridView.Size = new System.Drawing.Size(600, 254);
             this.CompaniesGridView.TabIndex = 1;
             this.CompaniesGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_RowEnter);
             // 
@@ -97,7 +101,6 @@
             this.CompanyId.Name = "CompanyId";
             this.CompanyId.ReadOnly = true;
             this.CompanyId.Visible = false;
-            this.CompanyId.Width = 125;
             // 
             // CompanyName
             // 
@@ -105,7 +108,6 @@
             this.CompanyName.MinimumWidth = 6;
             this.CompanyName.Name = "CompanyName";
             this.CompanyName.ReadOnly = true;
-            this.CompanyName.Width = 125;
             // 
             // BIN
             // 
@@ -113,7 +115,6 @@
             this.BIN.MinimumWidth = 6;
             this.BIN.Name = "BIN";
             this.BIN.ReadOnly = true;
-            this.BIN.Width = 125;
             // 
             // Address
             // 
@@ -121,7 +122,6 @@
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
             this.Address.ReadOnly = true;
-            this.Address.Width = 125;
             // 
             // Note
             // 
@@ -129,12 +129,13 @@
             this.Note.MinimumWidth = 6;
             this.Note.Name = "Note";
             this.Note.ReadOnly = true;
-            this.Note.Width = 125;
             // 
             // EmployeesGridView
             // 
             this.EmployeesGridView.AllowUserToAddRows = false;
             this.EmployeesGridView.AllowUserToDeleteRows = false;
+            this.EmployeesGridView.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.EmployeesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EmployeesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeId,
@@ -142,12 +143,12 @@
             this.FirstName,
             this.ThirdName,
             this.TIN});
-            this.EmployeesGridView.Location = new System.Drawing.Point(679, 131);
+            this.EmployeesGridView.Location = new System.Drawing.Point(640, 131);
             this.EmployeesGridView.Name = "EmployeesGridView";
             this.EmployeesGridView.ReadOnly = true;
             this.EmployeesGridView.RowHeadersWidth = 51;
             this.EmployeesGridView.RowTemplate.Height = 24;
-            this.EmployeesGridView.Size = new System.Drawing.Size(542, 253);
+            this.EmployeesGridView.Size = new System.Drawing.Size(600, 253);
             this.EmployeesGridView.TabIndex = 2;
             // 
             // EmployeeId
@@ -157,7 +158,6 @@
             this.EmployeeId.Name = "EmployeeId";
             this.EmployeeId.ReadOnly = true;
             this.EmployeeId.Visible = false;
-            this.EmployeeId.Width = 125;
             // 
             // LastName
             // 
@@ -165,7 +165,6 @@
             this.LastName.MinimumWidth = 6;
             this.LastName.Name = "LastName";
             this.LastName.ReadOnly = true;
-            this.LastName.Width = 125;
             // 
             // FirstName
             // 
@@ -173,7 +172,6 @@
             this.FirstName.MinimumWidth = 6;
             this.FirstName.Name = "FirstName";
             this.FirstName.ReadOnly = true;
-            this.FirstName.Width = 125;
             // 
             // ThirdName
             // 
@@ -181,7 +179,6 @@
             this.ThirdName.MinimumWidth = 6;
             this.ThirdName.Name = "ThirdName";
             this.ThirdName.ReadOnly = true;
-            this.ThirdName.Width = 125;
             // 
             // TIN
             // 
@@ -189,12 +186,12 @@
             this.TIN.MinimumWidth = 6;
             this.TIN.Name = "TIN";
             this.TIN.ReadOnly = true;
-            this.TIN.Width = 125;
             // 
             // EmployeesTableLabel
             // 
+            this.EmployeesTableLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.EmployeesTableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EmployeesTableLabel.Location = new System.Drawing.Point(675, 98);
+            this.EmployeesTableLabel.Location = new System.Drawing.Point(636, 98);
             this.EmployeesTableLabel.Name = "EmployeesTableLabel";
             this.EmployeesTableLabel.Size = new System.Drawing.Size(546, 30);
             this.EmployeesTableLabel.TabIndex = 3;
@@ -202,6 +199,7 @@
             // 
             // AddButton
             // 
+            this.AddButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.AddButton.Location = new System.Drawing.Point(17, 391);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(147, 51);
@@ -212,6 +210,7 @@
             // 
             // UpdateCompany
             // 
+            this.UpdateCompany.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.UpdateCompany.Location = new System.Drawing.Point(179, 390);
             this.UpdateCompany.Name = "UpdateCompany";
             this.UpdateCompany.Size = new System.Drawing.Size(159, 51);
@@ -222,7 +221,8 @@
             // 
             // DeleteCompany
             // 
-            this.DeleteCompany.Location = new System.Drawing.Point(428, 391);
+            this.DeleteCompany.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.DeleteCompany.Location = new System.Drawing.Point(465, 391);
             this.DeleteCompany.Name = "DeleteCompany";
             this.DeleteCompany.Size = new System.Drawing.Size(147, 51);
             this.DeleteCompany.TabIndex = 6;
@@ -232,7 +232,8 @@
             // 
             // DeleteEmployeeButton
             // 
-            this.DeleteEmployeeButton.Location = new System.Drawing.Point(1065, 391);
+            this.DeleteEmployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.DeleteEmployeeButton.Location = new System.Drawing.Point(1084, 390);
             this.DeleteEmployeeButton.Name = "DeleteEmployeeButton";
             this.DeleteEmployeeButton.Size = new System.Drawing.Size(156, 51);
             this.DeleteEmployeeButton.TabIndex = 9;
@@ -242,7 +243,8 @@
             // 
             // UpdateEmployeeButton
             // 
-            this.UpdateEmployeeButton.Location = new System.Drawing.Point(843, 390);
+            this.UpdateEmployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.UpdateEmployeeButton.Location = new System.Drawing.Point(817, 390);
             this.UpdateEmployeeButton.Name = "UpdateEmployeeButton";
             this.UpdateEmployeeButton.Size = new System.Drawing.Size(159, 51);
             this.UpdateEmployeeButton.TabIndex = 8;
@@ -252,7 +254,8 @@
             // 
             // AddEmployeeButton
             // 
-            this.AddEmployeeButton.Location = new System.Drawing.Point(679, 391);
+            this.AddEmployeeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AddEmployeeButton.Location = new System.Drawing.Point(640, 391);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
             this.AddEmployeeButton.Size = new System.Drawing.Size(158, 51);
             this.AddEmployeeButton.TabIndex = 7;
@@ -262,9 +265,10 @@
             // 
             // ImportCSVButton
             // 
+            this.ImportCSVButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ImportCSVButton.Location = new System.Drawing.Point(12, 467);
             this.ImportCSVButton.Name = "ImportCSVButton";
-            this.ImportCSVButton.Size = new System.Drawing.Size(563, 51);
+            this.ImportCSVButton.Size = new System.Drawing.Size(600, 51);
             this.ImportCSVButton.TabIndex = 10;
             this.ImportCSVButton.Text = "Загрузить список сотрудников из CSV файла";
             this.ImportCSVButton.UseVisualStyleBackColor = true;
@@ -274,6 +278,28 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // ExportCSVButton
+            // 
+            this.ExportCSVButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ExportCSVButton.Location = new System.Drawing.Point(640, 467);
+            this.ExportCSVButton.Name = "ExportCSVButton";
+            this.ExportCSVButton.Size = new System.Drawing.Size(600, 51);
+            this.ExportCSVButton.TabIndex = 11;
+            this.ExportCSVButton.Text = " Выгрузить список сотрудников в CSV файл";
+            this.ExportCSVButton.UseVisualStyleBackColor = true;
+            this.ExportCSVButton.Click += new System.EventHandler(this.ExportCSVButton_Click);
+            // 
+            // HeaderLabel
+            // 
+            this.HeaderLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HeaderLabel.Location = new System.Drawing.Point(0, 0);
+            this.HeaderLabel.Name = "HeaderLabel";
+            this.HeaderLabel.Size = new System.Drawing.Size(1252, 79);
+            this.HeaderLabel.TabIndex = 12;
+            this.HeaderLabel.Text = "Обозреватель компаний";
+            this.HeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // companyModelBindingSource
             // 
             this.companyModelBindingSource.DataSource = typeof(Marwin.UI.Models.CompanyModel);
@@ -282,21 +308,11 @@
             // 
             this.companyModelBindingSource1.DataSource = typeof(Marwin.UI.Models.CompanyModel);
             // 
-            // ExportCSVButton
-            // 
-            this.ExportCSVButton.Location = new System.Drawing.Point(679, 467);
-            this.ExportCSVButton.Name = "ExportCSVButton";
-            this.ExportCSVButton.Size = new System.Drawing.Size(542, 51);
-            this.ExportCSVButton.TabIndex = 11;
-            this.ExportCSVButton.Text = " Выгрузить список сотрудников в CSV файл";
-            this.ExportCSVButton.UseVisualStyleBackColor = true;
-            this.ExportCSVButton.Click += new System.EventHandler(this.ExportCSVButton_Click);
-            // 
             // HomeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(1252, 544);
+            this.Controls.Add(this.HeaderLabel);
             this.Controls.Add(this.ExportCSVButton);
             this.Controls.Add(this.ImportCSVButton);
             this.Controls.Add(this.DeleteEmployeeButton);
@@ -309,8 +325,10 @@
             this.Controls.Add(this.EmployeesGridView);
             this.Controls.Add(this.CompaniesGridView);
             this.Controls.Add(this.CompanyTableLabel);
+            this.MinimumSize = new System.Drawing.Size(1270, 591);
             this.Name = "HomeView";
-            this.Text = "Companies Manager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Обозреватель компаний";
             this.Load += new System.EventHandler(this.HomeView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesGridView)).EndInit();
@@ -348,6 +366,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button ExportCSVButton;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label HeaderLabel;
     }
 }
 

@@ -36,6 +36,7 @@
             // CancelButton
             // 
             this.CancelButton.Location = new System.Drawing.Point(124, 86);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(102, 57);
             this.CancelButton.TabIndex = 14;
@@ -47,6 +48,7 @@
             // 
             this.DeleteButton.BackColor = System.Drawing.Color.Red;
             this.DeleteButton.Location = new System.Drawing.Point(16, 86);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(102, 57);
             this.DeleteButton.TabIndex = 13;
@@ -67,11 +69,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(588, 159);
+            this.ControlBox = false;
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.HeaderLabel);
             this.Name = "EmployeeDeleteView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Удалить сотрудника";
             this.Load += new System.EventHandler(this.EmployeeDeleteView_Load);
             this.ResumeLayout(false);

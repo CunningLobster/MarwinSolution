@@ -46,6 +46,7 @@
             // 
             this.DeleteButton.BackColor = System.Drawing.Color.Red;
             this.DeleteButton.Location = new System.Drawing.Point(16, 96);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(102, 57);
             this.DeleteButton.TabIndex = 10;
@@ -56,6 +57,7 @@
             // CancelButton
             // 
             this.CancelButton.Location = new System.Drawing.Point(124, 96);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(102, 57);
             this.CancelButton.TabIndex = 11;
@@ -67,11 +69,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(574, 165);
+            this.ControlBox = false;
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.HeaderLabel);
             this.Name = "CompanyDeleteView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Удаление компании";
             this.Load += new System.EventHandler(this.CompanyDeleteView_Load);
             this.ResumeLayout(false);

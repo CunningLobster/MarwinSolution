@@ -60,6 +60,7 @@
             // CancelButton
             // 
             this.CancelButton.Location = new System.Drawing.Point(296, 284);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(102, 57);
             this.CancelButton.TabIndex = 32;
@@ -70,6 +71,7 @@
             // UpdateButton
             // 
             this.UpdateButton.Location = new System.Drawing.Point(109, 284);
+            this.UpdateButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(102, 57);
             this.UpdateButton.TabIndex = 31;
@@ -138,7 +140,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(548, 365);
+            this.ControlBox = false;
             this.Controls.Add(this.ThirdNameText);
             this.Controls.Add(this.ThirdName);
             this.Controls.Add(this.CancelButton);
@@ -151,6 +156,7 @@
             this.Controls.Add(this.FirstNameLabel);
             this.Controls.Add(this.LastNameLabel);
             this.Name = "EmployeeUpdateView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Обновить сотрудника";
             this.Load += new System.EventHandler(this.EmployeeUpdateView_Load);
             this.ResumeLayout(false);
