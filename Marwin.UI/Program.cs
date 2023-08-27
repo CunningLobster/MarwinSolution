@@ -2,6 +2,7 @@
 using Marwin.Core.ServiceContracts.CompanyServiceContracts;
 using Marwin.Core.ServiceContracts.EmployeeServiceContracts;
 using Marwin.Core.Services;
+using Marwin.Infrastructure.Data;
 using Marwin.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -52,7 +53,7 @@ namespace Marwin.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ConfigureServices();
-            Application.Run(new Form1());
+            Application.Run(new HomeView());
         }
     }
 }
