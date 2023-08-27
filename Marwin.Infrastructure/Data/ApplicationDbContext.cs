@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Marwin.Infrastructure.Data
 {
@@ -12,7 +13,7 @@ namespace Marwin.Infrastructure.Data
     {
         public DbSet<Company> Companies { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public ApplicationDbContext() : base()
+        public ApplicationDbContext() : base("name=DefaultConnectionString")
         {
         
         } 

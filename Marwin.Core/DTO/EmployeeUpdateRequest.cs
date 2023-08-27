@@ -36,6 +36,7 @@ namespace Marwin.Core.DTO
         /// ИИН сотрудника
         /// </summary>
         [Required]
+        [StringLength(12)]
         public string TIN { get; set; }
         /// <summary>
         /// Идентфикатор компании

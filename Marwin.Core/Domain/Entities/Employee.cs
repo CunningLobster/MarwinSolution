@@ -32,6 +32,7 @@ namespace Marwin.Core.Domain.Entities
         /// <summary>
         /// ИИН сотрудника
         /// </summary>
+        [StringLength(12)]
         public string TIN{ get; set; }
         /// <summary>
         /// Идентфикатор компании

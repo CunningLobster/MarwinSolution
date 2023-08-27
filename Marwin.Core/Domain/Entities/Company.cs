@@ -21,6 +21,7 @@ namespace Marwin.Core.Domain.Entities
         /// <summary>
         /// БИН компании
         /// </summary>
+        [StringLength(12)]
         public string BIN { get; set; }
         /// <summary>
         /// Физический адрес компании

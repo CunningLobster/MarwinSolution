@@ -51,7 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ApplicationDbContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CompaniesRepository.cs" />
+    <Compile Include="Repositories\EmployeesRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marwin.Core\Marwin.Core.csproj">

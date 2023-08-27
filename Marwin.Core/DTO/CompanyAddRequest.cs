@@ -19,6 +19,7 @@ namespace Marwin.Core.DTO
         /// БИН компании
         /// </summary>
         [Required]
+        [StringLength(12)]
         public string BIN { get; set; }
         /// <summary>
         /// Физический адрес компании
