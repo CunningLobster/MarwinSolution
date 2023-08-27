@@ -129,7 +129,7 @@
                 //"CompanyName":"Feedspan", "CompanyId":"ffb62ce2-a867-4b47-903a-f377cfd571b6"
                 new Employee
                 {
-                    EmployeeId = Guid.Parse("0404a9a0-8e09-4a6e-8a8a-1c782548f79f"),
+                    EmployeeId = Guid.Parse("2749429d-4915-4108-b22d-15d60bb3f904"),
                     FirstName = "Duncan",
                     LastName = "Shayler",
                     ThirdName = "Hefner",
