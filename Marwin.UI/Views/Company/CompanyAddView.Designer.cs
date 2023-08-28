@@ -97,6 +97,7 @@
             this.BINText.Name = "BINText";
             this.BINText.Size = new System.Drawing.Size(284, 22);
             this.BINText.TabIndex = 6;
+            this.BINText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BINText_KeyPress);
             // 
             // NoteText
             // 
@@ -159,7 +160,6 @@
             this.Name = "CompanyAddView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Добавить компанию";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CompanyAddView_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

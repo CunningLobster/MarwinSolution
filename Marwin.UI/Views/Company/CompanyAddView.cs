@@ -48,8 +48,12 @@ namespace Marwin.UI.Views.Company
             Close();
         }
 
-        private async void CompanyAddView_FormClosing(object sender, FormClosingEventArgs e)
+        private void BINText_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+            else
+                e.Handled = false;
         }
     }
 }

@@ -62,5 +62,13 @@ namespace Marwin.UI.Views.Employee
 
             Close();
         }
+
+        private void TINText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+            else
+                e.Handled = false;
+        }
     }
 }

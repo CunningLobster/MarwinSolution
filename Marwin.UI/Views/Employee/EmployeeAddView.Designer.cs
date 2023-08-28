@@ -80,6 +80,7 @@
             this.TINText.Name = "TINText";
             this.TINText.Size = new System.Drawing.Size(284, 22);
             this.TINText.TabIndex = 17;
+            this.TINText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TINText_KeyPress);
             // 
             // FirstNameText
             // 

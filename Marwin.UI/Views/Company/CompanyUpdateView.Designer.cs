@@ -86,6 +86,7 @@
             this.BINText.Name = "BINText";
             this.BINText.Size = new System.Drawing.Size(284, 22);
             this.BINText.TabIndex = 17;
+            this.BINText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BINText_KeyPress);
             // 
             // AddressText
             // 
