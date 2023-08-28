@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ThirdNameText = new System.Windows.Forms.TextBox();
             this.ThirdName = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
@@ -39,6 +40,8 @@
             this.TINLabel = new System.Windows.Forms.Label();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.LastNameLabel = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // ThirdNameText
@@ -59,6 +62,7 @@
             // 
             // CancelButton
             // 
+            this.CancelButton.CausesValidation = false;
             this.CancelButton.Location = new System.Drawing.Point(296, 284);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.CancelButton.Name = "CancelButton";
@@ -95,6 +99,7 @@
             this.TINText.Size = new System.Drawing.Size(284, 22);
             this.TINText.TabIndex = 29;
             this.TINText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TINText_KeyPress);
+            this.TINText.Validating += new System.ComponentModel.CancelEventHandler(this.TINText_Validating);
             // 
             // FirstNameText
             // 
@@ -102,6 +107,7 @@
             this.FirstNameText.Name = "FirstNameText";
             this.FirstNameText.Size = new System.Drawing.Size(284, 22);
             this.FirstNameText.TabIndex = 28;
+            this.FirstNameText.Validating += new System.ComponentModel.CancelEventHandler(this.FirstNameText_Validating);
             // 
             // LastNameText
             // 
@@ -109,6 +115,7 @@
             this.LastNameText.Name = "LastNameText";
             this.LastNameText.Size = new System.Drawing.Size(284, 22);
             this.LastNameText.TabIndex = 27;
+            this.LastNameText.Validating += new System.ComponentModel.CancelEventHandler(this.LastNameText_Validating);
             // 
             // TINLabel
             // 
@@ -137,6 +144,10 @@
             this.LastNameLabel.TabIndex = 24;
             this.LastNameLabel.Text = "Фамилия";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // EmployeeUpdateView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -160,6 +171,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Обновить сотрудника";
             this.Load += new System.EventHandler(this.EmployeeUpdateView_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +190,6 @@
         private System.Windows.Forms.Label TINLabel;
         private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.Label LastNameLabel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

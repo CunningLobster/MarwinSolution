@@ -77,6 +77,7 @@
     <Compile Include="Presenters\Employee\EmployeeDeletePresenter.cs" />
     <Compile Include="Presenters\Employee\EmployeeUpdatePresenter.cs" />
     <Compile Include="Presenters\HomePresenter.cs" />
+    <Compile Include="Validation\ValidationHelper.cs" />
     <Compile Include="Views\Company\CompanyAddView.cs">
       <SubType>Form</SubType>
     </Compile>

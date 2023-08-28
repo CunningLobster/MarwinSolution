@@ -53,6 +53,15 @@
   <ItemGroup>
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Data\MarwinDBInitializer.cs" />
+    <Compile Include="Migrations\202308272247184_InitialCreate.cs" />
+    <Compile Include="Migrations\202308272247184_InitialCreate.designer.cs">
+      <DependentUpon>202308272247184_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308281549392_CompanyNameLength.cs" />
+    <Compile Include="Migrations\202308281549392_CompanyNameLength.designer.cs">
+      <DependentUpon>202308281549392_CompanyNameLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CompaniesRepository.cs" />
     <Compile Include="Repositories\EmployeesRepository.cs" />
@@ -66,6 +75,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202308272247184_InitialCreate.resx">
+      <DependentUpon>202308272247184_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308281549392_CompanyNameLength.resx">
+      <DependentUpon>202308281549392_CompanyNameLength.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.CompanyNameLabel = new System.Windows.Forms.Label();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.NoteLabel = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // CompanyNameLabel
@@ -83,6 +86,7 @@
             this.CompanyNameText.Name = "CompanyNameText";
             this.CompanyNameText.Size = new System.Drawing.Size(284, 22);
             this.CompanyNameText.TabIndex = 4;
+            this.CompanyNameText.Validating += new System.ComponentModel.CancelEventHandler(this.CompanyNameText_Validating);
             // 
             // AddressText
             // 
@@ -90,6 +94,7 @@
             this.AddressText.Name = "AddressText";
             this.AddressText.Size = new System.Drawing.Size(284, 22);
             this.AddressText.TabIndex = 5;
+            this.AddressText.Validating += new System.ComponentModel.CancelEventHandler(this.AddressText_Validating);
             // 
             // BINText
             // 
@@ -98,6 +103,7 @@
             this.BINText.Size = new System.Drawing.Size(284, 22);
             this.BINText.TabIndex = 6;
             this.BINText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BINText_KeyPress);
+            this.BINText.Validating += new System.ComponentModel.CancelEventHandler(this.BINText_Validating);
             // 
             // NoteText
             // 
@@ -129,6 +135,7 @@
             // 
             // CancelButton
             // 
+            this.CancelButton.CausesValidation = false;
             this.CancelButton.Location = new System.Drawing.Point(304, 369);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.CancelButton.Name = "CancelButton";
@@ -137,6 +144,10 @@
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // CompanyAddView
             // 
@@ -160,6 +171,7 @@
             this.Name = "CompanyAddView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Добавить компанию";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +190,6 @@
         private System.Windows.Forms.Label HeaderLabel;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

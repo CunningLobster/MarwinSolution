@@ -14,6 +14,7 @@ namespace Marwin.Core.DTO
         /// Наименование компании
         /// </summary>
         [Required]
+        [StringLength(50)]
         public string CompanyName { get; set; }
         /// <summary>
         /// БИН компании

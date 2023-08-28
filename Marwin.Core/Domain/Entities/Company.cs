@@ -17,6 +17,7 @@ namespace Marwin.Core.Domain.Entities
         /// <summary>
         /// Наименование компании
         /// </summary>
+        [StringLength(50)]
         public string CompanyName { get; set; }
         /// <summary>
         /// БИН компании

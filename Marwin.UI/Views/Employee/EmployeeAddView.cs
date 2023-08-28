@@ -1,5 +1,6 @@
 ﻿using Marwin.UI.Models;
 using Marwin.UI.Presenters.Employee;
+using Marwin.UI.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,9 @@ namespace Marwin.UI.Views.Employee
 
         private async void AddButton_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren())
+                return;
+
             //Собрать модель из полей на форме
             EmployeeModel employeeModel = new EmployeeModel
             {
@@ -56,6 +60,24 @@ namespace Marwin.UI.Views.Employee
             else
                 e.Handled = false;
 
+        }
+
+        private void LastNameText_Validating(object sender, CancelEventArgs e)
+        {
+            ValidationHelper.CheckToEmptyString((TextBox)sender, errorProvider1, e);
+            ValidationHelper.CheckStringLength((TextBox)sender, 30, errorProvider1, e);
+        }
+
+        private void FirstNameText_Validating(object sender, CancelEventArgs e)
+        {
+            ValidationHelper.CheckToEmptyString((TextBox)sender, errorProvider1, e);
+            ValidationHelper.CheckStringLength((TextBox)sender, 30, errorProvider1, e);
+        }
+
+        private void TINText_Validating(object sender, CancelEventArgs e)
+        {
+            ValidationHelper.CheckToEmptyString((TextBox)sender, errorProvider1, e);
+            ValidationHelper.CheckStringLength((TextBox)sender, 12, errorProvider1, e);
         }
     }
 }
